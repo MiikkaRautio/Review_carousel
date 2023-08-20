@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{ 
+    margin-top: 0; 
+}
+
+#mainContainer{
+    background-image: url("./photos/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg");
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+}
+
+#cardContainer{
+    padding-top: 30px;
+    padding-bottom: 1%;
+    background-color: whitesmoke;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 3.5px 10px rgb(0 0 0 / 0.7);  
+}
+
+#mainTitle{
+    color: gold;
+    font-size: 100px;
+    padding-top: 5%;
+}
+
+#imageContainer{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#imageContainer img{
+    width: auto;
+    height: 100%;
+    margin-left: -50px;
+}
+
+
+.carouselText{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.button{
+    font-family: 'Quicksand', sans-serif;
+    border: none;
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#buttonLeft img{
+    width: 20px;
+    height: 15px;
+}
+
+#buttonRight img{
+    width: 20px;
+    height: 15px;
+}
+
+#buttonRandom{
+    font-family: 'Quicksand', sans-serif;
+    display: block; /* or inline-block */
+    margin: auto;
+    margin-top: 20px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+
