@@ -19,11 +19,13 @@ const reviewData = [
     }
 ];
 
-
 const leftButton = document.getElementById("buttonLeft");
+const rightButton = document.getElementById("buttonRight");
+const randomButton = document.getElementById("buttonRandom");
 
 let currentReviewIndex = 0;
 let currentReview = reviewData[currentReviewIndex];
+
 
 
 leftButton.addEventListener("click", function(){
@@ -31,8 +33,29 @@ leftButton.addEventListener("click", function(){
     currentReview = reviewData[currentReviewIndex];
 
     document.getElementById("cardPhoto").src = currentReview.profilePicture;
-    document.getElementById("cardName").textContent  = currentReview.profileName;
-    document.getElementById("cardPosition").textContent  = currentReview.profilePosition;
-    document.getElementById("cardDescription").textContent  = currentReview.profileDescription;
+    document.getElementById("cardName").textContent = currentReview.profileName;
+    document.getElementById("cardPosition").textContent = currentReview.profilePosition;
+    document.getElementById("cardDescription").textContent = currentReview.profileDescription;
 
 });
+
+rightButton.addEventListener("click", function(){
+    currentReviewIndex = (currentReviewIndex + 1) % reviewData.length;
+    currentReview = reviewData[currentReviewIndex];
+
+    document.getElementById("cardPhoto").src =currentReview.profilePicture;
+    document.getElementById("cardName").textContent = currentReview.profileName;
+    document.getElementById("cardPosition").textContent = currentReview.profilePosition;
+    document.getElementById("cardDescription").textContent = currentReview.profileDescription;
+});
+
+randomButton.addEventListener("click", function(){
+    const randomIndex = Math.floor(Math.random() * reviewData.length);
+    currentReview = reviewData[randomIndex];
+
+    document.getElementById("cardPhoto").src =currentReview.profilePicture;
+    document.getElementById("cardName").textContent = currentReview.profileName;
+    document.getElementById("cardPosition").textContent = currentReview.profilePosition;
+    document.getElementById("cardDescription").textContent = currentReview.profileDescription;
+});
+
