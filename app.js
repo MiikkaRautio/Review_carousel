@@ -6,7 +6,7 @@ const reviewData = [
         profileDescription: "Site works fine, CSS isn't fully implemented. The JS works fine enough. 2/5"
     },
     {
-        profilePicture: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg",
+        profilePicture: "https://st4.depositphotos.com/4157265/41100/i/450/depositphotos_411005388-stock-photo-profile-picture-of-smiling-30s.jpg",
         profileName: "Mark",
         profilePosition: "Software engineer",
         profileDescription: "Site is complete garbage. Needs to be redone"
@@ -26,6 +26,10 @@ const randomButton = document.getElementById("buttonRandom");
 let currentReviewIndex = 0;
 let currentReview = reviewData[currentReviewIndex];
 
+document.getElementById("cardPhoto").src = currentReview.profilePicture;
+document.getElementById("cardName").textContent = currentReview.profileName;
+document.getElementById("cardPosition").textContent = currentReview.profilePosition;
+document.getElementById("cardDescription").textContent = currentReview.profileDescription;
 
 
 leftButton.addEventListener("click", function(){
@@ -50,8 +54,14 @@ rightButton.addEventListener("click", function(){
 });
 
 randomButton.addEventListener("click", function(){
-    const randomIndex = Math.floor(Math.random() * reviewData.length);
-    currentReview = reviewData[randomIndex];
+    let randomIndex;
+
+    do{
+        randomIndex = Math.floor(Math.random()*reviewData.length);
+    } while(randomIndex === currentReviewIndex);
+
+    currentReviewIndex = randomIndex;
+    const currentReview = reviewData[currentReviewIndex];
 
     document.getElementById("cardPhoto").src =currentReview.profilePicture;
     document.getElementById("cardName").textContent = currentReview.profileName;
